@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI Chatbot Game</h1>
+    </header>
+
+    <nav>
+        <button onclick="openPopup('home-popup')">Home</button>
+        <button onclick="openPopup('generator-popup')">Generate AI</button>
+        <button onclick="openPopup('chats-popup')">Chats</button>
+    </nav>
+
+    <div id="home-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('home-popup')">&times;</span>
+            <h2>Create Your Profile</h2>
+            <form id="profile-form">
+                <label for="profile-image">Upload Profile Image:</label>
+                <input type="file" id="profile-image" accept="image/*">
+
+                <label for="profile-name">Enter Your Name:</label>
+                <input type="text" id="profile-name" required>
+
+                <button type="submit">Save Profile</button>
+            </form>
+
+            <h2>Settings</h2>
+            <button id="delete-data">Delete Local Save Data</button>
+        </div>
+    </div>
+
+    <div id="generator-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('generator-popup')">&times;</span>
+            <h2>AI Chatbot Generation</h2>
+            <form id="generator-form">
+                <label for="bot-name">Enter Chatbot Name:</label>
+                <input type="text" id="bot-name" required>
+
+                <label for="bot-description">Enter Description (Personality Traits):</label>
+                <textarea id="bot-description" required></textarea>
+
+                <label for="bot-image">Upload Profile Image:</label>
+                <input type="file" id="bot-image" accept="image/*">
+
+                <button type="submit">Generate Chatbot</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="chats-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('chats-popup')">&times;</span>
+            <h2>Your Conversations</h2>
+            <div id="chat-list">
+                <!-- List of AI Chatbots will be dynamically populated here -->
+            </div>
+
+            <h2 id="chatbot-name">Chat with: </h2>
+            <div id="chat-messages">
+                <!-- Chat messages will be dynamically populated here -->
+            </div>
+            <form id="chat-form">
+                <input type="text" id="user-message" placeholder="Type a message..." required>
+                <button type="submit">Send</button>
+            </form>
+            <button id="back-to-list" onclick="showChatList()">Back to Chat List</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
